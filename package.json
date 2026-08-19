@@ -1,10 +1,22 @@
 {
   "name": "dsh-fullweb",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/arialp/dsh-fullweb.git"
   },
+  "keywords": [
+    "deepseek",
+    "dsh",
+    "harness",
+    "plugin",
+    "web-search",
+    "web-fetch",
+    "duckduckgo",
+    "bing",
+    "agent-preset",
+    "llm-tools"
+  ],
   "description": "Key-free internet access for the DeepSeek Harness: anonymous DDG/Bing web_search and a guarded public HTTP(S) web_fetch, plus the Code + full web agent preset. Installs as a dsh profile bundle.",
   "type": "module",
   "license": "MIT",
