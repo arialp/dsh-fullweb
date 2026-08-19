@@ -19,10 +19,10 @@ One command per profile you want web access in (usually just `web` for the brows
 
 ```sh
 # from npm:
-npx @deepseek-ai/dsh --profile web plugin add dsh-fullweb
+npx @deepseek-ai/dsh plugin --profile web add dsh-fullweb
 
 # or straight from git (no registry needed):
-npx @deepseek-ai/dsh --profile web plugin add git+https://github.com/arialp/dsh-fullweb.git#main
+npx @deepseek-ai/dsh plugin --profile web add git+https://github.com/arialp/dsh-fullweb.git#main
 ```
 
 What happens: pnpm installs the package into your profile, and `dsh` automatically appends it to the profile's bundle stack — its patch layer then selects the local providers on the host `web` row. On the next boot the plugin also copies the shipped preset into `~/.dsh/.agent-presets/code-fullweb/` (idempotent; a `.dsh-fullweb-version` stamp marks it as managed).
@@ -46,8 +46,8 @@ Existing sessions keep the preset they were created with; a session that has not
 ## Uninstall / update
 
 ```sh
-npx @deepseek-ai/dsh --profile web plugin remove dsh-fullweb     # or <git spec> if installed from git
-npx @deepseek-ai/dsh --profile web plugin update                 # bump to the newest published version
+npx @deepseek-ai/dsh plugin --profile web remove dsh-fullweb     # or <git spec> if installed from git
+npx @deepseek-ai/dsh plugin --profile web update                 # bump to the newest published version
 ```
 
 `remove` takes the providers and the profile layer out of that profile. The preset copy in `~/.dsh/.agent-presets/` is left behind (it is yours now); delete the directory if you want it gone — while the package is still installed, add `.dsh-fullweb-absent` first so boot does not restore it on the next start. If you had set `code-fullweb` as your default preset, clear that setting (or pick another) before removing.
