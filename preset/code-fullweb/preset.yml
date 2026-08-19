@@ -1,0 +1,3 @@
+name: Code + full web
+description: The code preset plus key-free anonymous web_search and web_fetch, served by dsh-fullweb's local providers (no vendor search API).
+order: 2

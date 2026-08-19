@@ -1,0 +1,27 @@
+{
+  "name": "dsh-fullweb",
+  "version": "0.1.0",
+  "description": "Key-free internet access for the DeepSeek Harness: anonymous DDG/Bing web_search and a guarded public HTTP(S) web_fetch, plus the Code + full web agent preset. Installs as a dsh profile bundle.",
+  "type": "module",
+  "license": "MIT",
+  "files": [
+    "provider/index.js",
+    "preset/code-fullweb/preset.yml",
+    "preset/code-fullweb/agent.cordis.yml",
+    "cordis.patch.yml"
+  ],
+  "exports": {
+    "./provider": "./provider/index.js",
+    "./package.json": "./package.json"
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh-home-paths": "^0.1.0-rc.7",
+    "@deepseek-ai/dsh-web": "^0.1.0-rc.7",
+    "@deepseek-ai/schemastery": "^3.18.1"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+# dsh-fullweb profile layer, applied after every in-box bundle by `dsh plugin`
+# reconcile (this package declares dsh.bundle). A patch replaces the targeted
+# row's whole config, so every key it owns is restated.
+#
+# The web seam selects this package's key-free providers: DuckDuckGo/Bing HTML
+# search (id local-anon) and a guarded public HTTP(S) fetch provider
+# (id local-fetch). Any deployment-owned search provider stays registered but
+# unselected, so no web traffic touches its billing endpoint. The agent preset
+# ships with the package and is installed into the user's .agent-presets root
+# by the plugin itself at boot (launcher overlays own every configured
+# roster root, so a bundle cannot contribute one).
+
+- id: web
+  config:
+    searchProvider: local-anon
+    fetchProvider: local-fetch
+
+- insert:
+    - id: web-local
+      name: 'dsh-fullweb/provider'
