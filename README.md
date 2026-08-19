@@ -22,7 +22,7 @@ One command per profile you want web access in (usually just `web` for the brows
 npx @deepseek-ai/dsh --profile web plugin add dsh-fullweb
 
 # or straight from git (no registry needed):
-npx @deepseek-ai/dsh --profile web plugin add git+https://github.com/<owner>/dsh-fullweb.git#main
+npx @deepseek-ai/dsh --profile web plugin add git+https://github.com/arielp/dsh-fullweb.git#main
 ```
 
 What happens: pnpm installs the package into your profile, and `dsh` automatically appends it to the profile's bundle stack — its patch layer then selects the local providers on the host `web` row. On the next boot the plugin also copies the shipped preset into `~/.dsh/.agent-presets/code-fullweb/` (idempotent; a `.dsh-fullweb-version` stamp marks it as managed).
